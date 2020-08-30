@@ -52,6 +52,7 @@ body {
 
   font-size: 2em;
 
+  /* outline: none; */
   background-color: #E0E0E0;
 }
 .btn-wrapper .right-operator {
@@ -60,4 +61,8 @@ body {
 }
 #btn-zero {
   min-width: 50%;
+  border-bottom-left-radius: 5px;
+}
+#equal {
+  border-bottom-right-radius: 5px;
 }
