@@ -23,13 +23,14 @@ function numInput(value) {
         store.lastNum += Number((store.deciArr[len - 1] * Math.pow(0.1, len)).toFixed(len));
       } else if (store.lastNum < 0) {
         store.lastNum -= Number((store.deciArr[len - 1] * Math.pow(0.1, len)).toFixed(len));
-      } else if (store.lastNum == 0) {
+      } else if (store.lastNum === 0) {
         if (store.notNega > 0) {
           store.lastNum += Number((store.deciArr[len - 1] * Math.pow(0.1, len)).toFixed(len));
         } else if (store.notNega < 0) {
           store.lastNum -= Number((store.deciArr[len - 1] * Math.pow(0.1, len)).toFixed(len));
         }
       }
+      screen.textContent = (store.lastNum === 0) ? screen.textContent + '0' : store.lastNum;
     } else {
       if (store.lastNum === 0) {
         store.notNega > 0 ? store.lastNum += num : store.lastNum -= num;
@@ -38,8 +39,8 @@ function numInput(value) {
       } else {
         store.lastNum = -(Math.abs(store.lastNum) * 10 + num);
       }
+      screen.textContent = store.lastNum;
     }
-    screen.textContent = store.lastNum;
   } else {
     if (store.haveDeci) {
       store.deciArr.push(num);
@@ -48,13 +49,14 @@ function numInput(value) {
         store.firstNum += Number((store.deciArr[len - 1] * Math.pow(0.1, len)).toFixed(len));
       } else if (store.firstNum < 0) {
         store.firstNum -= Number((store.deciArr[len - 1] * Math.pow(0.1, len)).toFixed(len));
-      } else if (store.firstNum == 0) {
+      } else if (store.firstNum === 0) {
         if (store.notNega > 0) {
           store.firstNum += Number((store.deciArr[len - 1] * Math.pow(0.1, len)).toFixed(len));
         } else if (store.notNega < 0) {
           store.firstNum -= Number((store.deciArr[len - 1] * Math.pow(0.1, len)).toFixed(len));
         }
       }
+      screen.textContent = (store.firstNum === 0) ? screen.textContent + '0' : store.firstNum;
     } else {
       if (store.firstNum === 0) {
         store.notNega > 0 ? store.firstNum += num : store.firstNum -= num;
@@ -63,8 +65,8 @@ function numInput(value) {
       } else {
         store.firstNum = -(Math.abs(store.firstNum) * 10 + num);
       }
+      screen.textContent = store.firstNum;
     }
-    screen.textContent = store.firstNum;
   }
 }
 
